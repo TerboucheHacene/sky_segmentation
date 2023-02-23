@@ -25,7 +25,7 @@ Alternatively, you can use any package manager of your choice. The main dependen
 
 ## Solutions
 
-1. Deep Learning Based
+1. **Deep Learning Based**
 
 - The [MIT Scene Parsing Benchmark](https://github.com/CSAILVision/sceneparsing) provides a standard training and evaluation platform for the algorithms of scene parsing. Scene parsing is the task of segmenting and parsing an image into different image regions associated with semantic categories, such as sky, road, person, and bed.
 
@@ -33,10 +33,10 @@ Alternatively, you can use any package manager of your choice. The main dependen
 
 - The dataset can be downloaded:
 
-    ./bash/download.sh
+        ./bash/download.sh
 
 
-1.1. Use a Pretrained Model:
+    1.1. **Use a Pretrained Model**
 
 - The simplest solution is use a pretrained model on this dataset and implement a wrapper to obtain the segmentation mask for the `sky` class only.
 
@@ -50,7 +50,7 @@ Alternatively, you can use any package manager of your choice. The main dependen
         ./bash/download_ckpt.sh
 
 
-1.2. Train a Custom Model
+    1.2. **Train a Custom Model**
 
 -  As we are interested in the `sky` only, it would be better to train a custom model that produces a binary mask to indicate the sky regions in a given image. We expect this task to be simpler to solve for the model compared to the original dataset.
 
@@ -69,16 +69,16 @@ Alternatively, you can use any package manager of your choice. The main dependen
         python scripts/test.py
 
 
-2. Classical Image Processing Based
+2. **Classical Image Processing Based**
 
-2.1. Contour-Based Segmentation
+    2.1. **Contour-Based Segmentation**
 
 - This solution is based on a series of image processing steps. It starts by converting the image to binary image. Then, a contour algorithm is applied to find the biggest contour that should contain everything except the sky. Some Morpholigical operations are applied to refine the segmentation mask.
 
 - The implementation can be found in the `ContourBasedSkySegmentation` class [here](sky_segmentation/image_processing/segmentation.py), whereas the notebook that showcases it can be found [here](notebooks/classic_contour.ipynb)
 
 
-2.2. Color-Based Segmentation
+    2.2. **Color-Based Segmentation**
 
 - This solution is based on the intrinsic property of the sky: the color. First, it converts the image to HSV color space. Then, the image is thresholded based on the range of blue-sky color.
 
