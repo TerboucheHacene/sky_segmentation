@@ -1,5 +1,5 @@
 # sky_segmentation
-The subject of this test is to propose a solution in order to automate the creation of segmentation masks for sky in images. Being able to automate this kind of tasks could open up great opportunities for the creation of new automated effects in the Quik App.
+The subject of this test is to propose a solution in order to automate the creation of segmentation masks for sky in images. Being able to automate this kind of tasks could open up great opportunities for the creation of new automated effects.
 
 We would like you to propose at least two different approaches for this task.
 Hint: that can go from clustering or basic binary classification techniques to CNN based solutions. Don’t hesitate to use the specificities of sky to implement your solution.
